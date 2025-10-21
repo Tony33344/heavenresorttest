@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Purple Circle Background -->
+  <circle cx="200" cy="200" r="195" fill="#7B4B8E"/>
+  
+  <!-- Top Semi-circle (lighter shade for depth) -->
+  <path d="M 50 200 A 150 150 0 0 1 350 200 Z" fill="#8B5B9E"/>
+  
+  <!-- White/Cream Symbol in top half -->
+  <g fill="#F5F5F0">
+    <!-- Left curved S shape -->
+    <path d="M 90 130 Q 110 100, 140 95 Q 155 93, 165 100 L 160 120 Q 150 115, 142 117 Q 120 120, 110 145 Q 105 160, 110 175 L 88 180 Q 80 160, 85 140 Q 87 125, 90 130 Z"/>
+    
+    <!-- Middle curved element -->
+    <path d="M 155 105 Q 175 95, 200 95 Q 235 95, 260 110 L 260 135 Q 240 120, 200 120 Q 175 120, 160 130 L 155 105 Z"/>
+    
+    <!-- Right arrow shape -->
+    <path d="M 260 110 L 295 110 L 290 90 L 325 115 L 290 140 L 295 120 L 260 135 Z"/>
+    
+    <!-- Small house/roof element on arrow -->
+    <circle cx="305" cy="75" r="18" fill="#F5F5F0"/>
+    <path d="M 290 70 L 305 55 L 320 70 L 305 70 Z" fill="#7B4B8E"/>
+    <rect x="300" y="70" width="10" height="12" fill="#7B4B8E"/>
+  </g>
+  
+  <!-- Horizontal white dividing line -->
+  <rect x="50" y="197" width="300" height="6" fill="#F5F5F0" rx="3"/>
+  
+  <!-- Bottom half - solid purple -->
+  <path d="M 50 200 A 150 150 0 0 0 350 200 Z" fill="#6A3A7D"/>
+  
+  <!-- White curved accent in bottom -->
+  <path d="M 100 240 Q 150 220, 200 220 Q 250 220, 300 240" stroke="#F5F5F0" stroke-width="12" fill="none" opacity="0.3"/>
+</svg>
