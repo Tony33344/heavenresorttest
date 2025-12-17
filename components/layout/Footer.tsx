@@ -84,7 +84,7 @@ export default function Footer() {
               <li className="flex items-center space-x-3 group">
                 <Phone className="w-5 h-5 text-primary-light flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <a
-                  href="tel:+386XXXXXXX"
+                  href="tel:+38651302206"
                   className="text-neutral-400 hover:text-primary-light transition-colors text-sm"
                 >
                   {t('contact.info.phone')}

@@ -81,7 +81,8 @@ export default function Events() {
                 />
                 
                 {/* Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-b ${color} opacity-80 group-hover:opacity-90 transition-opacity`} />
+                <div className={`absolute inset-0 bg-gradient-to-b ${color} opacity-65 group-hover:opacity-75 transition-opacity`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
                 
                 {/* Content */}
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
@@ -89,8 +90,8 @@ export default function Events() {
                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
                       <Icon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-3xl font-light mb-3">{title}</h3>
-                    <p className="text-white/90 leading-relaxed">
+                    <h3 className="text-3xl font-medium mb-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)]">{title}</h3>
+                    <p className="text-white/90 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)]">
                       {description}
                     </p>
                   </div>

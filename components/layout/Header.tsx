@@ -51,7 +51,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo - Official Brand PNG */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-12 h-12 md:w-14 md:h-14 transition-transform group-hover:scale-105">
+            <div className="relative w-14 h-14 md:w-16 md:h-16 transition-transform group-hover:scale-105">
               <img
                 src="/images/logo.png"
                 alt="HEAVEN Resort Logo"
@@ -59,8 +59,8 @@ export default function Header() {
               />
             </div>
             <div className="text-neutral-900">
-              <div className="text-xl md:text-2xl font-light tracking-[0.3em]">HEAVEN</div>
-              <div className="text-xs md:text-sm font-light tracking-[0.3em] -mt-1 text-primary">resort</div>
+              <div className="text-2xl md:text-3xl font-light tracking-[0.22em] leading-none">HEAVEN</div>
+              <div className="text-sm md:text-base font-light tracking-[0.22em] -mt-1 text-primary leading-none">resort</div>
             </div>
           </Link>
 

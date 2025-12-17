@@ -168,7 +168,7 @@ export const translations = {
         title: 'Informacije',
         address: 'Kristan Vrh 16, Šmarje pri Podčetrtku, Slovenija',
         email: 'info@heavenresort.com',
-        phone: '+386 XX XXX XXX',
+        phone: '+38651302206',
       },
       location: {
         title: 'Lokacija',
@@ -351,7 +351,7 @@ export const translations = {
         title: 'Information',
         address: 'Kristan Vrh 16, Šmarje pri Podčetrtku, Slovenia',
         email: 'info@heavenresort.com',
-        phone: '+386 XX XXX XXX',
+        phone: '+38651302206',
       },
       location: {
         title: 'Location',

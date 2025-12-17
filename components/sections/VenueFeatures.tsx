@@ -39,7 +39,7 @@ export default function VenueFeatures() {
       title: t('venue.event.title'),
       description: t('venue.event.description'),
       features: t('venue.event.features'),
-      image: 'https://images.unsplash.com/photo-1519167758481-83f29da8c2b6?q=80&w=2070',
+      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070',
     },
   ];
 
