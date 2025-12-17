@@ -3,9 +3,18 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useEffect, useState } from 'react';
+import { getContentBlock } from '@/lib/supabase';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [content, setContent] = useState<any>(null);
+
+  useEffect(() => {
+    getContentBlock('hero', language).then(block => {
+      if (block?.data) setContent(block.data);
+    }).catch(() => {});
+  }, [language]);
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -70,7 +79,7 @@ export default function Hero() {
             
             {/* Tagline - Bold uppercase with brand color accent */}
             <p className="text-sm md:text-base lg:text-xl font-bold tracking-[0.3em] uppercase text-primary-light">
-              {t('hero.subtitle')}
+              {content?.subtitle || t('hero.subtitle')}
             </p>
           </motion.div>
 
@@ -80,7 +89,7 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
           >
-            {t('hero.description')}
+            {content?.description || t('hero.description')}
           </motion.p>
 
           <motion.div 
@@ -93,7 +102,7 @@ export default function Hero() {
               href="#contact" 
               className="btn-primary text-base md:text-lg px-10 py-4 shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105"
             >
-              {t('hero.cta')}
+              {content?.cta_text || t('hero.cta')}
             </a>
             <a 
               href="#about" 

@@ -8,15 +8,17 @@ export const translations = {
       accommodation: 'Nastanitev',
       gallery: 'Galerija',
       packages: 'Paketi',
+      services: 'Storitve',
       contact: 'Kontakt',
       booking: 'Rezervacija',
     },
     hero: {
       title: 'HEAVEN Resort',
-      subtitle: 'TRANSFORMATIVNA IDOŽIVETJA',
+      subtitle: 'TRANSFORMATIVNA DOŽIVETJA',
       description: 'Eleganten prostor za dogodke in transformativne izkušnje v objemu narave',
       cta: 'Rezerviraj Zdaj',
       explore: 'Razišči',
+      learnMore: 'Več o nas',
     },
     about: {
       title: 'O HEAVEN Resort',
@@ -174,7 +176,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Transformativna Idoživetja',
+      tagline: 'Transformativna Doživetja',
       quickLinks: 'Hitre Povezave',
       followUs: 'Sledite Nam',
       rights: 'Vse pravice pridržane.',
@@ -189,6 +191,7 @@ export const translations = {
       accommodation: 'Accommodation',
       gallery: 'Gallery',
       packages: 'Packages',
+      services: 'Services',
       contact: 'Contact',
       booking: 'Book Now',
     },
@@ -198,6 +201,7 @@ export const translations = {
       description: 'Elegant event space and transformative experiences embraced by nature',
       cta: 'Book Now',
       explore: 'Explore',
+      learnMore: 'Learn More',
     },
     about: {
       title: 'About HEAVEN Resort',

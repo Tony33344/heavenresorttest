@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "react-day-picker/dist/style.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { AuthProvider } from "@/contexts/AuthContext";
+import dynamic from "next/dynamic";
+
+const LanguageSetter = dynamic(() => import("@/components/LanguageSetter"), { ssr: false });
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -30,11 +35,14 @@ export default function RootLayout({
   return (
     <html lang="sl" className={inter.variable}>
       <body className={inter.className}>
-        <LanguageProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </LanguageProvider>
+        <AuthProvider>
+          <LanguageProvider>
+            <LanguageSetter />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </AuthProvider>
       </body>
     </html>
   );

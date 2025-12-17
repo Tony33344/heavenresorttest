@@ -1,1 +1,29 @@
 node_modules
+
+# Local Netlify folder
+.netlify
+
+# Env files
+.env
+.env*.local
+
+# Next build output
+.next/
+
+# Coverage
+coverage/
+
+# Logs
+*.log
+logs/
+
+# Vercel
+.vercel/
+
+# OS
+.DS_Store
+
+# Playwright
+playwright-report/
+.playwright/
+test-results/

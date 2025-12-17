@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useForm } from 'react-hook-form';
+import { createContactMessage } from '@/lib/supabase';
 
 type FormData = {
   name: string;
@@ -28,11 +29,19 @@ export default function Contact() {
     setSubmitStatus('idle');
 
     try {
-      // Here you would integrate with Supabase or your backend
-      // For now, simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const extra: string[] = [];
+      if (data.eventType) extra.push(`Event Type: ${data.eventType}`);
+      if (data.eventDate) extra.push(`Event Date: ${data.eventDate}`);
+      if (data.guests) extra.push(`Guests: ${data.guests}`);
+      const fullMessage = extra.length ? `${data.message}\n\n${extra.join(' | ')}` : data.message;
+
+      await createContactMessage({
+        name: data.name,
+        email: data.email,
+        phone: data.phone || '',
+        message: fullMessage,
+      });
       
-      console.log('Form data:', data);
       setSubmitStatus('success');
       reset();
     } catch (error) {

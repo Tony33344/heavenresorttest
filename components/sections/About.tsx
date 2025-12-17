@@ -2,14 +2,22 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Sparkles, Heart, Mountain, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getContentBlock } from '@/lib/supabase';
 
 export default function About() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [content, setContent] = useState<any>(null);
+
+  useEffect(() => {
+    getContentBlock('about', language).then(block => {
+      if (block?.data) setContent(block.data);
+    }).catch(() => {});
+  }, [language]);
 
   const features = [
     {
@@ -66,7 +74,7 @@ export default function About() {
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070')",
+                backgroundImage: `url('${content?.image_url || 'https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070'}')`,
               }}
             />
           </motion.div>
@@ -79,13 +87,13 @@ export default function About() {
             className="flex flex-col justify-center space-y-6"
           >
             <p className="text-lg text-neutral-700 leading-relaxed">
-              {t('about.description1')}
+              {content?.description1 || t('about.description1')}
             </p>
             <p className="text-lg text-neutral-700 leading-relaxed">
-              {t('about.description2')}
+              {content?.description2 || t('about.description2')}
             </p>
             <p className="text-lg text-neutral-700 leading-relaxed">
-              {t('about.description3')}
+              {content?.description3 || t('about.description3')}
             </p>
             <div className="pt-4">
               <a href="#contact" className="btn-primary shadow-lg hover:shadow-primary/50 transition-all hover:scale-105">

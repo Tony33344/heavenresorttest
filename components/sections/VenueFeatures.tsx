@@ -2,14 +2,22 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Home, Trees, Calendar, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getContentBlock } from '@/lib/supabase';
 
 export default function VenueFeatures() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [content, setContent] = useState<any>(null);
+
+  useEffect(() => {
+    getContentBlock('venue', language).then(block => {
+      if (block?.data) setContent(block.data);
+    }).catch(() => {});
+  }, [language]);
 
   const venues = [
     {

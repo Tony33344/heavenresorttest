@@ -12,11 +12,7 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Redirects and rewrites
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No SPA redirect; Next SSR handled by plugin
 
 # Headers for security and performance
 [[headers]]

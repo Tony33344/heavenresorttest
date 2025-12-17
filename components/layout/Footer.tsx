@@ -41,7 +41,7 @@ export default function Footer() {
               {t('footer.tagline')}
             </p>
             <div className="text-xs font-bold tracking-[0.3em] uppercase text-primary-light">
-              TRANSFORMATIVNA IDOŽIVETJA
+              TRANSFORMATIVNA DOŽIVETJA
             </div>
           </div>
 
