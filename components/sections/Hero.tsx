@@ -10,6 +10,11 @@ export default function Hero() {
   const { t, language } = useLanguage();
   const [content, setContent] = useState<any>(null);
 
+  const subtitleRaw = content?.subtitle || t('hero.subtitle');
+  const subtitle = typeof subtitleRaw === 'string'
+    ? subtitleRaw.replace('IDOŽIVETJA', 'DOŽIVETJA')
+    : subtitleRaw;
+
   useEffect(() => {
     getContentBlock('hero', language).then(block => {
       if (block?.data) setContent(block.data);
@@ -52,12 +57,12 @@ export default function Hero() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center space-y-10"
+            className="flex flex-col items-center space-y-8"
           >
             {/* Official Logo - PNG asset on white presentation card */}
             <div className="flex flex-col items-center">
-              <div className="w-48 md:w-64 lg:w-72 mb-8 rounded-3xl border border-white/40 bg-white/95 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-sm">
-                <div className="p-6 md:p-8">
+              <div className="w-40 md:w-56 lg:w-64 mb-6 rounded-3xl border border-white/40 bg-white/95 shadow-[0_16px_48px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+                <div className="p-5 md:p-7">
                   <img
                     src="/images/logo.png"
                     alt="HEAVEN Resort Logo"
@@ -68,10 +73,10 @@ export default function Hero() {
               
               {/* Brand Typography - White text on dark background */}
               <div className="text-center space-y-1">
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-thin tracking-[0.5em] text-white">
+                <h1 className="text-5xl md:text-6xl lg:text-8xl font-thin tracking-[0.35em] text-white leading-none">
                   HEAVEN
                 </h1>
-                <p className="text-2xl md:text-3xl lg:text-5xl font-thin tracking-[0.5em] text-white/90">
+                <p className="text-2xl md:text-3xl lg:text-5xl font-thin tracking-[0.35em] text-white/90 leading-none">
                   resort
                 </p>
               </div>
@@ -79,7 +84,7 @@ export default function Hero() {
             
             {/* Tagline - Bold uppercase with brand color accent */}
             <p className="text-sm md:text-base lg:text-xl font-bold tracking-[0.3em] uppercase text-primary-light">
-              {content?.subtitle || t('hero.subtitle')}
+              {subtitle}
             </p>
           </motion.div>
 
